@@ -43,7 +43,14 @@ class SafeFileSystem
 		string referenceToLog = ""
 	)
 	{
-		ProcessUtility::forkAndExec<function<void()>>([src, dst, options]() { fs::copy(src, dst, options); }, timeoutSeconds, referenceToLog);
+		ProcessUtility::forkAndExec<function<int()>>(
+			[src, dst, options]()
+			{
+				fs::copy(src, dst, options);
+				return 0;
+			},
+			timeoutSeconds, referenceToLog
+		);
 	}
 
   private:
