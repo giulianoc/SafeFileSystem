@@ -3,6 +3,8 @@
 #include "spdlog/spdlog.h"
 #include <future>
 
+using namespace std;
+
 // Per evitare blocchi/hangs su mount instabili (es. CIFS)
 template <typename Func, typename ReturnType> ReturnType SafeFileSystem::withTimeoutThread(Func func, int timeoutSeconds, string referenceToLog)
 {
