@@ -22,14 +22,14 @@ template <typename Func, typename ReturnType> ReturnType SafeFileSystem::withTim
 				"{}",
 				referenceToLog
 			);
-			SPDLOG_ERROR(errorMessage);
+			LOG_ERROR(errorMessage);
 
 			throw runtime_error(errorMessage);
 		}
 	}
 	catch (const std::exception &e)
 	{
-		SPDLOG_ERROR(
+		LOG_ERROR(
 			"filesystem exception"
 			"{}"
 			", e.what: {}",

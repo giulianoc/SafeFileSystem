@@ -29,6 +29,7 @@ SET (HEADERS
 )
 
 include_directories("${SPDLOG_INCLUDE_DIR}")
+include_directories("${THREADLOGGER_INCLUDE_DIR}")
 include_directories("${PROCESSUTILITY_INCLUDE_DIR}")
 
 add_library (SafeFileSystem SHARED ${SOURCES} ${HEADERS})

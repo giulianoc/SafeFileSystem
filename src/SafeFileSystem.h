@@ -22,7 +22,7 @@ class SafeFileSystem
 		int exitStatus;
 		do
 		{
-			SPDLOG_INFO(
+			LOG_INFO(
 				"forkAndExec. fileSizeProcess"
 				"{}"
 				", path: {}"
@@ -43,7 +43,7 @@ class SafeFileSystem
 				", currentRetries: {}/{}",
 				referenceToLog, path.string(), timeoutSeconds, currentRetries, maxRetries
 			);
-			SPDLOG_ERROR(errorMessage);
+			LOG_ERROR(errorMessage);
 
 			throw std::runtime_error(errorMessage);
 		}
